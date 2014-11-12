@@ -1,0 +1,220 @@
+
+
+/**************************************************************/
+/*********** GENERAL : 	body , typography **********************/
+/**************************************************************/
+body{
+    width: 100%;
+    margin: 0 auto ;
+    position: relative;        
+}
+
+h1{
+    color: #646626 ;
+    font-weight: bold;
+    font-size: 3rem;    
+    margin-left: 5%;
+   // float: left; 
+ }
+
+h2,h3{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #6B5731 ;
+    margin: 4% 0;
+}
+
+h3{
+    text-align: left;
+    font-size: 1.3rem;
+}
+
+/****************************************/
+/*********** Entête  **********************/
+/***************************************/
+#header{
+    width: 100%;
+    height: 3rem;
+    padding:1rem;    
+    position: fixed;/* le header n'est pas soumis à l'ascenseur*/
+    background: repeating-radial-gradient(
+    	ellipse at right  center, 
+    	#AEE9AF 0.0015%, 
+    	#A8BCB0 0.0025%, 
+    	#FEFEFE 0.0035%, 
+    	#BEF0D9 0.0045%, 
+    	rgba(184, 197, 65, 1) 0.005%
+    ) ;    
+} 
+
+.signUp{
+    width: 20%;      
+    margin-left: 10%;     
+ }
+.signUp li{   
+    display: inline-block;     
+}
+
+ #userNickname { 
+    width: 20%;      
+    margin-left: 70%;       
+    padding:0.5%;  
+    border :solid 0.1rem rgba(236, 234, 124, 1); 
+}
+
+#js-save-user{      
+    padding:2%;
+    border-radius: 1rem 0; 
+    border :solid 0.1rem rgba(236, 234, 124, 1);      
+}
+.nickname{
+    width: 18%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0 2%;
+    display: inline-block;
+}
+.heure{
+    font-style: italic;
+}
+
+
+/**********************************************************************/
+/*********** Partie gauche d'affichage des Msg  ***********************/
+/*********************************************************************/
+
+main{
+    width: 90%;     
+    margin: 0 auto;    
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    /* lors qu'on défile ,la page va rouler sous le header, cache pas le header*/       
+}
+
+#blocMsgPrincipal{
+    width: 81%; 
+    height: 100%;   
+    margin: 3rem auto 0 auto;   
+    padding: 2% ;    
+    float: left;  
+   	background: linear-gradient(
+	   	#DDF7F9 30%, 
+	   	#F9FBE8 60%, 
+	   	#F4EAF8 90%, 
+	   	#F4FBFA 100%
+   	) ;
+}
+
+/*******************************************************************************/
+/*********** affichage des Msg viennent d'être envoyés  ***********************/
+/******************************************************************************/
+
+#affiche-newMsg{
+    width: 100%;     
+    overflow: hidden;
+}
+.exchange{
+    width:80%;
+    margin: 0 0.5% ;
+    overflow: hidden;   
+    position: relative;   
+}
+.right{
+    margin-right: 2%;
+    float: right;
+}
+.pseudo-img {
+    width: 6%;
+    height: 2rem;      
+    padding: 0.2%;   
+      
+}
+.imgLeft{	
+    float: left;
+    border-radius: 0.8rem 0.8rem 0 0.8rem;
+	background-image: url('../../background/bg.jpg');    	
+}
+.imgRight {
+    float: right;
+    border-radius: 0.8rem 0.8rem 0.8rem 0 ;
+    background-image: url('../../background/bg1.gif');   
+}
+.texte{
+    width: 88%;               
+    margin: 1% ;
+    padding:0.5% 0.5% 2% 0.5%;
+    border-radius: 1rem; 
+    position: relative;
+}
+.txtLeft{
+    background: rgba(243, 219, 249, 1);
+    float: left;           
+}
+.txtRight{    
+    background: rgba(199, 242, 234, 1);   
+    float: right;    
+}
+.time{
+    position: absolute;
+    right: 4%;  
+    bottom: 0.8rem;      
+}
+
+/**********************************************************************/
+/*********** Zone à taper un nouveau message ***********************/
+/*********************************************************************/
+
+#newMsg{
+	position: relative;
+}
+
+#newMsg input{
+    width: 75.2%;
+    height: 2rem;
+    padding: 0 0.5%;
+    position: fixed;   
+    bottom: 0;
+    left: 5%; 
+    background: rgba(251, 247, 221, 1);
+    border : solid 0.1rem rgba(115, 159, 75, 1);
+}
+
+
+/***************************************************************************************/
+/*********** Partie droite: affichage la liste des utilisateurs  ***********************/
+/****************************************************************************************/
+
+#users{
+    width: 10%;
+    height: 100%;
+    padding:  1.5% 2%;   
+    position: fixed;
+    top: 5rem;
+    left: 81.5%; 
+    background: linear-gradient(
+	   	135deg,
+	   	white 10%,
+	   	rgba(198, 205, 206, 1) 50%, 	   	
+	   	rgba(240, 153, 174, 1) 70%,
+	   	#F9FBE8 100% 	   	
+   	) ;    
+}
+#users li{
+	position: relative;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	color: rgba(16, 11, 83, 0.77);
+}
+
+#users li::before{  
+    content: "*";
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #F82DEE;
+	position: absolute;
+	top:0.2rem;
+	left: -1rem;      
+}
+

@@ -1,0 +1,46 @@
+<div class="page-header">
+  <h1>Inscription</h1>
+</div>
+
+<?php if ($orderWithoutAuth): ?>
+  <div class="alert alert-warning" role="alert">
+    <strong>Vous devez vous inscrire pour pouvoir finaliser votre commande :</strong>
+  </div>
+<?php endif ?>
+
+<form name="customerSignUpForm" action="" method="post" role="form">
+  <div class="form-group">
+    <label class="checkbox-inline first">
+      <input type="radio" name="customerCivility" value="Mme" checked="checked"> Mme
+    </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="customerCivility" value="Melle"> Melle
+    </label>
+    <label class="checkbox-inline">
+      <input type="radio" name="customerCivility" value="M."> M.
+    </label>
+  </div>
+  <div class="form-group">
+    <input name="customerLastName" type="text" class="form-control" placeholder="Nom">
+  </div>
+  <div class="form-group">
+    <input name="customerFirstName" type="text" class="form-control" placeholder="Prénom">
+  </div>
+  <div class="form-group">
+    <input name="customerAddress" type="text" class="form-control" placeholder="Adresse">
+  </div>
+  <div class="form-group">
+    <input name="customerZipCode" type="text" class="form-control" placeholder="Code Postal">
+  </div>
+  <div class="form-group">
+    <input name="customerCity" type="text" class="form-control" placeholder="Ville">
+  </div>
+  <div class="form-group">
+    <input name="customerEmail" type="email" class="form-control" placeholder="E-mail">
+  </div>
+  <div class="form-group">
+    <input name="customerPassword" type="password" class="form-control" placeholder="Mot de passe">
+  </div>
+  <input name="action" value="customerSignUp" type="hidden">
+  <button type="submit" class="btn btn-default">S'INSCRIRE</button>
+</form>

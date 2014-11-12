@@ -1,0 +1,90 @@
+<!-- view/home.phtml -->
+
+<?php if ($gameIsReady): ?>
+
+  <div class="col-md-4 text-center">
+    <img src="view/img/character.png" alt="" style="height: 420px; margin-bottom: 20px">
+    <div class="progress progress-striped active">
+      <div class="progress-bar" style="width: <?= 100 * $selectedCharacterObject->getLife() / $selectedCharacterObject->getLifeMax() ?>%"></div>
+    </div>
+    <p><a href="index.php?action=characterAttack" class="btn btn-warning">ATTAQUER LE DRAGON</a></p>
+    <ul class="list-group text-left" style="margin-top: 20px">
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedCharacterObject->getName() ?></span>
+        Nom
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedCharacterObject->getLifeMax() ?></span>
+        Vie max.
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedCharacterObject->getArmor() ?></span>
+        Armure
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedCharacterObject->getWeapon()->getName() ?></span>
+        Arme
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedCharacterObject->getWeapon()->getForce() ?></span>
+        Force
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-4 col-md-offset-4 text-center">
+    <img src="view/img/dragon.png" alt="" style="height: 420px; margin-bottom: 20px">
+    <div class="progress progress-striped active">
+      <div class="progress-bar" style="width: <?= 100 * $selectedDragonObject->getLife() / $selectedDragonObject->getLifeMax() ?>%"></div>
+    </div>
+    <p><a href="index.php?action=dragonAttack" class="btn btn-warning">ATTAQUER LE PERSONNAGE</a></p>
+    <ul class="list-group text-left" style="margin-top: 20px">
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedDragonObject->getName() ?></span>
+        Nom
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedDragonObject->getLifeMax() ?></span>
+        Vie max.
+      </li>
+      <li class="list-group-item">
+        <span class="badge"><?= $selectedDragonObject->getForce() ?></span>
+        Force
+      </li>
+    </ul>
+  </div>
+
+<?php endif ?>
+
+<div class="clearfix"></div>
+
+<div class="page-header">
+  <h2 id="container">Sélection</h2>
+</div>
+
+<div class="col-md-4">
+  <h3>Dragons</h3>
+  <div class="list-group">
+    <?php foreach ($dragons as $dragon): ?>
+      <a href="index.php?action=dragonSelect&dragonId=<?= $dragon['dragonId'] ?>" class="list-group-item<?php if($dragon['dragonId'] == $_SESSION['selectedDragonId']): ?> active<?php endif ?>"><?= $dragon['dragonName'] ?></a>
+    <?php endforeach ?>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <h3>Personnages</h3>
+  <div class="list-group">
+    <?php foreach ($characters as $character): ?>
+      <a href="index.php?action=characterSelect&characterId=<?= $character['characterId'] ?>" class="list-group-item<?php if($character['characterId'] == $_SESSION['selectedCharacterId']): ?> active<?php endif ?>"><?= $character['characterName'] ?></a>
+    <?php endforeach ?>
+  </div>
+</div>
+
+<div class="col-md-4">
+  <h3>Armes</h3>
+  <div class="list-group">
+    <?php foreach ($weapons as $weapon): ?>
+      <a href="index.php?action=weaponSelect&weaponId=<?= $weapon['weaponId'] ?>" class="list-group-item<?php if($weapon['weaponId'] == $_SESSION['selectedWeaponId']): ?> active<?php endif ?>"><?= $weapon['weaponName'] ?></a>
+    <?php endforeach ?>
+  </div>
+</div>

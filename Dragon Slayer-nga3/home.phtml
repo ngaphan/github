@@ -1,0 +1,106 @@
+<?php if ($gameIsReady): ?>
+
+    <div class="col-md-4 text-center">
+        <img src="img/character.png" alt="" style="height: 420px; margin-bottom: 20px">
+        <div class="progress progress-striped active">
+            <div class="progress-bar" style="width:<?= 100*$selectedCharacterObj->getLife()/$selectedCharacterObj->getLifeMax() ?>%"></div>
+        </div>
+        <p><a href="index.php?action=characterAttack" class="btn btn-warning"><b>ATTAQUER LE DRAGON</b></a></p>
+        <ul class="list-group text-left" style="margin-top: 20px">
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedCharacterObj->getName() ?></span>
+                Nom du personnage
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedCharacterObj->getLifeMax() ?></span>
+                Vie max.
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedCharacterObj->getArmor() ?></span>
+                Armure
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedCharacterObj->getWeapon()->getName() ?></span>
+                Arme
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedCharacterObj->getWeapon()->getForce() ?></span>
+                Force
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4 text-center">
+        <img src="img/dragon.png" alt="" style="height: 420px; margin-bottom: 20px">
+        <div class="progress progress-striped active">
+            <div class="progress-bar" style="width:<?= 100*$selectedDragonObj->getLife()/$selectedDragonObj->getLifeMax()?>%"></div>
+        </div>
+        <p><a href="index.php?action=dragonAttack" class="btn btn-warning"><b>ATTAQUER LE PERSONNAGE</b></a></p>
+        <ul class="list-group text-left" style="margin-top: 20px">
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedDragonObj->getName() ?></span>
+                Nom du dragon
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedDragonObj->getLifeMax() ?></span>
+                Vie max.
+            </li>
+            <li class="list-group-item">
+                <span class="badge"><?= $selectedDragonObj->getForce() ?></span>
+                Force
+            </li>
+        </ul>
+    </div>
+
+<?php endif ?>
+
+<div class="clearfix"></div>
+
+<!--Affichage des choix pour le jeu -->
+
+<div class="page-header">
+    <h2 id="container">Sélection</h2>
+</div>
+
+<div class="col-md-4">
+    <h3>Dragons</h3>
+    <div class="list-group">
+        <?php foreach ($dragonsArray as $dragonArray): ?>
+            <a href="index.php?action=dragonSelect&dragonId=<?= $dragonArray['dragonId'] ?>" class="list-group-item"><?= $dragonArray['dragonName'] ?></a>
+        <?php endforeach ?>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h3>Personnages</h3>
+    <div class="list-group">
+        <?php foreach ($charactersArray as $characterArray): ?>
+            <a href="index.php?action=characterSelect&characterId=<?= $characterArray['characterId'] ?>" class="list-group-item"><?= $characterArray['characterName'] ?></a>
+        <?php endforeach ?>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h3>Armes</h3>
+    <div class="list-group">
+        <?php foreach ($weaponsArray as $weaponArray): ?>
+         <a href="index.php?action=weaponSelect&weaponId=<?= $weaponArray['weaponId'] ?>" class="list-group-item"><?= $weaponArray['weaponName'] ?></a>
+        <?php endforeach ?>
+    </div>
+</div>
+
+
+<!--Affichage des users -->
+
+<div class="page-header">
+    <h2 id="container">List des users </h2>
+</div>
+
+<div class="col-md-4">
+    <h3>Users conncetés</h3>
+    <div class="list-group">
+        <?php foreach ($usersArray as $userArray): ?>
+         <a href="index.php?action=userSelect&userId=<?= $userArray['userId'] ?>" class="list-group-item"><?= $userArray['username'] ?></a>      
+        <?php endforeach ?>
+    </div>
+</div>

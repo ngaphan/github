@@ -1,0 +1,82 @@
+
+body {
+    width: 100%;
+}
+img {
+    width: 100%;
+}
+h1
+{
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem ;
+    color:white;
+    text-align: center;
+    padding: 10rem 0;
+}
+h2
+{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 3rem ;
+    color:yellow;
+    text-align: left;
+    padding:1rem ;
+
+}
+
+header{
+    background: url('img/dragon.jpg') no-repeat ;
+    background-size: cover;
+    width: 100%;
+}
+
+table{
+    border: solid 0.1rem blue;
+    margin: 2rem 1rem;
+    text-align: center;
+}
+
+.dragon{
+    width: 20%;
+    margin: 1rem 1rem 1rem 2% ;
+}
+.person{
+    width: 20%;
+    margin: 1rem 1rem 1rem 2% ;
+}
+
+tr, th {
+    line-height: 2rem ;
+    border: solid 0.1rem blue;
+    text-align: center;
+    /*width: 5rem;*/
+
+}
+th{
+    font-weight: bold;
+}
+
+td:nth-child(1) {
+    width: 2rem;
+    border: solid 0.1rem blue;
+
+}
+td:nth-child(2) {
+    width: 15rem;
+    border: solid 0.1rem blue;
+}
+td:nth-child(3) {
+    width: 15rem;
+    border: solid 0.1rem blue;
+}
+td:nth-child(4) {
+    width: 8rem;
+    border: solid 0.1rem blue;
+}
+td:nth-child(5) {
+    width: 8rem;
+    border: solid 0.1rem blue;
+}
+

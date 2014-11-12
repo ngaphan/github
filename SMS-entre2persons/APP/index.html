@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> t'chat</title>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+    </head>
+
+    <body>
+
+        <header id="header">
+            <h1>Mon super T'chat</h1>
+            <form id="js-user-form" class="signUp" action="../API/index.php" method="get">                   
+                <input id="userNickname" name="userNickname" type="text" placeholder="Pseudonyme"/>
+                <input id="js-save-user" type="submit" value="ENTREE"/>
+                <input type="hidden" name="action" value="userAdd">
+            </form>
+        </header>
+
+        <main>
+            <section id="blocMsgPrincipal">
+
+            	<!--Zone d'affichage des anciens messages-->
+                <div id="affiche-oldMsg">
+
+                    <h2>Liste des messages</h2>
+
+                    <ul id="oldMsgList">
+                        <li>
+                            <span class="heure"> 12 : 35 : 24 </span>
+                            <label class="nickname">Nina  </label>
+                            <span class="msg">Sed ut perspiciatis unde omnis iste natus error sit voluptatem </span> 
+                        </li>
+                        <li>
+                            <span class="heure"> 12 : 36 : 47 </span>
+                            <label class="nickname">Jean Christophe   </label>
+                            <span class="msg">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</span> 
+                        </li>
+                        <li>
+                            <span class="heure"> 12 : 38 : 01 </span>
+                            <label class="nickname">Jean </label>
+                            <span class="msg">similique sunt in culpa qui officia deserunt mollitia anim</span> 
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            
+                <!--Zone d'affichage des nouveaux messages-->
+                <div id="affiche-newMsg">
+                    
+                    <h2> Aujourd'hui </h2>
+
+                    <div class="exchange left ">
+	                    <div class="pseudo-img imgLeft"></div>                  	                                     	
+                    	<div class="texte txtLeft">
+                    		<p class="texte"> because occasionally circumstances occur in which toil </p>
+                    		<p class="time">HH:MM:SS</p>
+                    	</div>
+                    </div>
+
+                    <div class="exchange right">                    
+                   		<div class="pseudo-img imgRight"></div>              	             
+                    	<div class="texte txtRight">
+                    		<p class="texte">Quis autem vel eum iure laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in reprehenderit qui in ea voluptate velit esse quam</p>
+                    		<p class="time">HH:MM:SS</p>
+                    	</div>
+                    </div>
+
+                    <div class="exchange left ">
+	                    <div class="pseudo-img imgLeft"></div>                  	                                     	
+                    	<div class="texte txtLeft">
+                    		<p class="texte">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</p>
+                    		<p class="time">HH:MM:SS</p>
+                    	</div>
+                    </div>
+
+                    <div class="exchange right">
+                   		<div class="pseudo-img imgRight"></div>               	              
+                    	<div class="texte txtRight">
+                    		<p class="texte">consequuntur magni dolores eos qui ratione voluptatem</p>
+                    		<p class="time">HH:MM:SS</p>
+                    	</div>
+                    </div>                         
+                </div>
+
+                <div id="newMsg">                
+                    <input type="text" placeholder="Tapez votre message ici et appuyez sur entrée pour l'envoyer"></input>
+                </div>               
+
+            </section>
+
+            <aside id="users">
+                <h3>Utilisateurs</h3>
+                <ul>
+                	<li>Toto</li>
+                	<li>Tycon</li>
+                	<li>Tycon</li>                	
+                	<li>Tycon</li>
+                	<li>Tycon</li>
+                	
+                </ul>
+            </aside>
+        </main> 
+
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/main.js"></script>       
+    </body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Dragon Slayer</title>
+    <link rel="stylesheet"  href="dragon.css" />
+    <script src="js/utilities.js"></script>
+</head>
+<body>
+    <section>
+        <header><h1>Dragon Slayer</h1></header>
+
+        <article class="afficheBDD">
+            <table id="dragons">
+                <h2>Dragons</h2>
+                <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>DragonName</th>
+                        <th>DragonLifeMax</th>
+                        <th>DragonForce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($dragonsArray as $dragonArray): ?>
+                        <tr id="dragon<?= $dragonArray['dragonId'] ?>">
+                            <td><?= $dragonArray['dragonId'] ?></td>
+                            <td class="dragonName"><?= $dragonArray['dragonName'] ?></td>
+                            <td class="dragonLifeMax"><?= $dragonArray['dragonLifeMax'] ?></td>
+                            <td class="dragonForce"><?= $dragonArray['dragonForce'] ?></td>
+                            <td><a href="#" data-dragon-id="<?= $dragonArray['dragonId'] ?>">Modifier</a></td>
+                            <td><a href="index.php?dragonId=<?= $dragonArray['dragonId'] ?>&action=deleteDragon">Supprimer</a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+            <form action="" method="post">
+                <input name="dragonName" type="text">
+                <input name="dragonLifeMax" type="numeric">
+                <input name="dragonForce" type="numeric">
+                <input name="action" value="addDragon" type="hidden">
+                <input value="AJOUTER" type="submit">
+            </form>
+        </article>
+
+
+        <article class="afficheBDD">
+            <table id="characters">
+                <h2>Characters</h2>
+                <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>CharacterName</th>
+                        <th>CharacterLifeMax</th>
+                        <th>CharacterArmor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($charactersArray as $characterArray): ?>
+                        <tr id="character<?= $characterArray['characterId'] ?>">
+                            <td><?= $characterArray['characterId'] ?></td>
+                            <td class="characaterName"><?= $characterArray['characterName'] ?></td>
+                            <td class="characaterLifeMax"><?= $characterArray['characterLifeMax'] ?></td>
+                            <td class="characaterArmor"><?= $characterArray['characterArmor'] ?></td>
+                            <td><a href="#" data-character-id="<?= $characterArray['characterId'] ?>">Modifier</a></td>
+                            <td><a href="index.php?characterId=<?= $characterArray['characterId'] ?>&action=deleteCharacter">Supprimer</a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+
+            <form action="" method="post">
+                <input name="characterName" type="text">
+                <input name="characterLifeMax" type="numeric">
+                <input name="characterArmor" type="numeric">
+                <input name="action" value="addCharacter" type="hidden">
+                <input value="AJOUTER" type="submit">
+            </form>
+        </article>
+
+        <article class="afficheBDD">
+            <table id="weapons">
+                <h2>Weapons</h2>
+                <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>WeaponName</th>                   
+                        <th>WeaponForce</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($weaponsArray as $weaponArray): ?>
+                        <tr id="weapon<?= $weaponArray['weaponId'] ?>">
+                            <td><?= $weaponArray['weaponId'] ?></td>
+                            <td class="weaponName"><?= $weaponArray['weaponName'] ?></td>                        
+                            <td class="weaponForce"><?= $weaponArray['weaponForce'] ?></td>
+                            <td><a href="#" data-weapon-id="<?= $weaponArray['weaponId'] ?>">Modifier</a></td>
+                            <td><a href="index.php?weaponId=<?= $weaponArray['weaponId'] ?>&action=deleteWeapon">Supprimer</a></td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+            <form action="" method="post">
+                <input name="weaponName" type="text">           
+                <input name="weaponForce" type="numeric">
+                <input name="action" value="addWeapon" type="hidden">
+                <input value="AJOUTER" type="submit">
+            </form>
+        </article>
+
+    </section>
+     <script src="js/main.js"></script>
+</body>
+</html>

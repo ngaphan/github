@@ -1,0 +1,127 @@
+<div class="page-header">
+    <h1>Administration</h1>
+</div>
+
+<h2>Dragons</h2>
+
+<p class="text-right"><button type="button" class="btn btn-primary btn-sm" onclick="$('#formDragonAdd').toggle();">+ NOUVEAU</button></p>
+
+<div id="formDragonAdd" class="well col-md-6 col-md-offset-6" style="display: none">
+    <form role="form">
+        <div class="form-group">
+            <input type="text" placeholder="Nom" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Vie max." class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Force" class="form-control">
+        </div>
+
+        <input value="AJOUTER" type="submit" class="btn btn-default">
+    </form>
+</div>
+
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+    <th class="col-md-1">Id</th>
+    <th class="col-md-6">Nom</th>
+    <th class="col-md-2">Vie max.</th>
+    <th class="col-md-2">Force</th>
+    <th class="col-md-1"></th>
+    </thead>
+    <tbody>
+    <?php foreach($dragonsArray as $dragonArray): ?>
+        <tr>
+            <td><?= $dragonArray['dragonId'] ?></td>
+            <td><?= $dragonArray['dragonName'] ?></td>
+            <td><?= $dragonArray['dragonLifeMax'] ?></td>
+            <td><?= $dragonArray['dragonForce'] ?></td>
+            <td><a href="index.php?menu=admin&dragonId=<?= $dragonArray['dragonId'] ?>&action=dragonDelete" type="button" class="btn btn-danger btn-xs">SUPPRIMER</a></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+
+<h2>Characters</h2>
+
+<p class="text-right"><button type="button" class="btn btn-primary btn-sm" onclick="$('#formCharacterAdd').toggle();">+ NOUVEAU</button></p>
+
+<div id="formCharacterAdd" class="well col-md-6 col-md-offset-6" style="display: none">
+    <form role="form">
+        <div class="form-group">
+            <input type="text" placeholder="Nom" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Vie max." class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Armure" class="form-control">
+        </div>
+
+        <input value="AJOUTER" type="submit" class="btn btn-default">
+    </form>
+</div>
+
+<table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+        <th class="col-md-1">Id</th>
+        <th class="col-md-6">Nom</th>
+        <th class="col-md-2">Vie max.</th>
+        <th class="col-md-2">Armure</th>
+        <th class="col-md-1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($charactersArray as $characterArray): ?>
+        <tr>
+            <td><?= $characterArray['characterId'] ?></td>
+            <td><?= $characterArray['characterName'] ?></td>
+            <td><?= $characterArray['characterLifeMax'] ?></td>
+            <td><?= $characterArray['characterArmor'] ?></td>
+            <td><a href="index.php?menu=admin&characterId=<?= $characterArray['characterId'] ?>&action=characterDelete" type="button" class="btn btn-danger btn-xs">SUPPRIMER</a></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
+
+
+<h2>Weapons</h2>
+
+<p class="text-right"><button type="button" class="btn btn-primary btn-sm" onclick="$('#formWeaponAdd').toggle();">+ NOUVEAU</button></p>
+
+<div id="formWeaponAdd" class="well col-md-6 col-md-offset-6" style="display: none">
+    <form role="form">
+        <div class="form-group">
+            <input type="text" placeholder="Nom" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Force" class="form-control">
+        </div>
+
+        <input value="AJOUTER" type="submit" class="btn btn-default">
+    </form>
+</div>
+
+<table class="table table-striped table-hover ">
+    <thead>
+    <tr>
+        <th class="col-md-1">Id</th>
+        <th class="col-md-8">Nom</th>
+        <th class="col-md-2">Force</th>
+        <th class="col-md-1"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach($weaponsArray as $weaponArray): ?>
+        <tr>
+            <td><?= $weaponArray['weaponId'] ?></td>
+            <td><?= $weaponArray['weaponName'] ?></td>
+            <td><?= $weaponArray['weaponForce'] ?></td>
+            <td><a href="index.php?menu=admin&weaponId=<?= $weaponArray['weaponId'] ?>&action=weaponDelete" type="button" class="btn btn-danger btn-xs">SUPPRIMER</a></td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
